@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>www.login.com</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="log.css">
+	<script type="text/javascript">
+		function validateform(){  
+		var name=document.myform.uname.value;  
+		var password=document.myform.pword.value;  
+  
+		if (name==null || name==""){  
+ 		  alert("Name can't be blank");  
+ 		 return false;  
+		}
+		else if(password.length<6){  
+  		  alert("Password must be at least 6 characters long.");  
+  		return false;
+  }  
+} 
+
+function validate(){
+    var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    var uname = document.getElementById('uname').value;
+    if(!regName.test(uname)){
+        alert('Please enter your full name (first & last name).');
+        document.getElementById('uname').focus();
+        return false;
+    }else{
+        alert('Valid name given.');
+        return true;
+    }
+}
+ 	</script>
+
+</head>
+<body>
+	<section>
+		<div class="formbox">
+			<div class="formvalue"> 
+				<form action="index.html" name="myform" onsubmit="
+				return validateform()" method="post" onclick="validate()">
+					<h3>Login</h3>
+					<div class="inputbox">
+                        <i class="material-icons" style="font-size: 25px;" >dummy face</i>
+						<input type="username" name="uname" required onclick="validate()">
+						<label style="color: black; font-weight: 600">Username</label>
+					</div>
+					<div class="inputbox">
+						<i class="material-icons" style="font-size: 25px;" >mail</i>
+						<input type="email" name="email" required="" autocomplete="off">
+					<label for="" style="color: black;font-weight: 600">Email</label>
+					</div>
+					<div class="inputbox">
+                        <i class="material-icons" style="font-size: 25px;" >lock</i>
+						<input type="password" name="pword" required>
+						<label style="color: black; font-weight: 600">Password</label>
+					</div>
+					<div class="forget">
+						<label for="" style="color: black"><input type="checkbox" name="" style="font-weight: 400">Remember Me <a href="#" style="color: black;">Forget password</a></label>
+						
+					</div>
+					<button style="font-weight: 600;">Log in</button>
+					<div class="register">
+						<p style="font-weight: 400">Don't have a account <a href="#" style="color: black;">Register</a></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
